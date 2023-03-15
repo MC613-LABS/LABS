@@ -9,9 +9,6 @@ end mux4_to_1;
 
 architecture rtl of mux4_to_1 is
 begin
-	dec: entity work.dec2_to_4 PORT MAP ('1', sel(1), sel(0));
-	extra : entity work.extra_logic PORT MAP ();
-	
   -- add your code
 end rtl;
 
