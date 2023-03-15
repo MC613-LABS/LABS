@@ -8,9 +8,11 @@ end xbar_v1;
 
 architecture rtl of xbar_v1 is
   BEGIN
-  y1 <= x1 WHEN s = '0';
-  y1 <= x2 WHEN s = '1';
-  y2 <= x1 WHEN s = '1';
-  y2 <= x2 WHEN s = '0';
+  WITH s SELECT
+  y1 <= x1 WHEN '0', x2 WHEN '1';
+  
+  WITH s SELECT
+  y2 <= x2 WHEN '0', x1 WHEN '1';
+  
 end rtl;
 

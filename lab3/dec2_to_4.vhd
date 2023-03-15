@@ -8,6 +8,10 @@ end dec2_to_4;
 
 architecture rtl of dec2_to_4 is
 begin
-  -- add your code
+  y0 <= '1' when en = '1' and w0 = '0' and w1 = '0' else '0';
+  y1 <= '1' when en = '1' and w0 = '1' and w1 = '0' else '0';
+  y2 <= '1' when en = '1' and w0 = '0' and w1 = '1' else '0';
+  y3 <= '1' when en = '1' and w0 = '1' and w1 = '1' else '0';
+  
 end rtl;
 

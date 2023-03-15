@@ -8,6 +8,7 @@ end xbar_v2;
 
 architecture rtl of xbar_v2 is
 begin
-  -- add your code
+  y1 <= x1 WHEN s = '0' ELSE x2;
+  y2 <= x2 WHEN s = '0' ELSE x1;
 end rtl;
 

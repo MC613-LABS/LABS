@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Wed Mar 15 14:56:19 2023
+Analysis & Elaboration Status : Successful - Wed Mar 15 16:25:34 2023
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : lab3
-Top-level Entity Name : xbar_v1
+Top-level Entity Name : extra_logic
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
