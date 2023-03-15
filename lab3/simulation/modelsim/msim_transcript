@@ -1,0 +1,76 @@
+# do lab3_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /opt/altera/17.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/ec2021-fra/ra198932/lab3/xbar_v1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:57:21 on Mar 15,2023
+# vcom -reportprogress 300 -93 -work work /home/ec2021-fra/ra198932/lab3/xbar_v1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xbar_v1
+# -- Compiling architecture rtl of xbar_v1
+# End time: 14:57:22 on Mar 15,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim work.xbar_v1
+# vsim work.xbar_v1 
+# Start time: 14:58:36 on Mar 15,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.xbar_v1(rtl)
+add wave -position end  sim:/xbar_v1/s
+add wave -position end  sim:/xbar_v1/x1
+add wave -position end  sim:/xbar_v1/x2
+add wave -position end  sim:/xbar_v1/y1
+add wave -position end  sim:/xbar_v1/y2
+wave create -driver freeze -pattern constant -value 0 -starttime 0ps -endtime 250ps sim:/xbar_v1/s
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+wave create -driver freeze -pattern constant -value 0 -starttime 0ps -endtime 125ps sim:/xbar_v1/x1
+wave create -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 125ps sim:/xbar_v1/x2
+wave create -driver freeze -pattern constant -value 1 -starttime 126ps -endtime 250ps sim:/xbar_v1/x1
+# /xbar_v1/x1 already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+wave create -driver freeze -pattern clock -initialvalue 0 -period 125ps -dutycycle 50 -starttime 0ps -endtime 500ps sim:/xbar_v1/x1
+# /xbar_v1/x1 already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+add wave -position insertpoint  \
+sim:/xbar_v1/x1
+wave create -driver freeze -pattern clock -initialvalue 0 -period 125ps -dutycycle 50 -starttime 0ps -endtime 500ps sim:/xbar_v1/x1
+wave create -driver freeze -pattern clock -initialvalue 0 -period 250ps -dutycycle 50 -starttime 0ps -endtime 500ps sim:/xbar_v1/x1
+wave create -driver freeze -pattern clock -initialvalue 1 -period 250ps -dutycycle 50 -starttime 0ps -endtime 500ps sim:/xbar_v1/x2
+# /xbar_v1/x2 already exists in the wave, cannot add twice
+# Usage: wave create -pattern <clock|constant|random|repeater|counter|none> <args>
+# See Command Reference manual for pattern specific <args>
+wave create -driver freeze -pattern clock -initialvalue 1 -period 250ps -dutycycle 50 -starttime 0ps -endtime 500ps sim:/xbar_v1/x2
+wave create -driver freeze -pattern clock -initialvalue 0 -period 500ps -dutycycle 50 -starttime 0ps -endtime 500ps sim:/xbar_v1/s
+add wave -position 1 -format Logic -height 21 -editable 2 Edit:/xbar_v1/s
+add wave -position end -format Logic -height 21 -editable 2 Edit:/xbar_v1/x1
+add wave -position end -format Logic -height 21 -editable 2 Edit:/xbar_v1/x2
+add wave -position end  sim:/xbar_v1/y1
+add wave -position end  sim:/xbar_v1/y1
+add wave -position end  sim:/xbar_v1/y2
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libnss_systemd.so.2 : module was loaded at an absolute address.
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 500ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/xbar_v1/s
+add wave -position insertpoint  \
+sim:/xbar_v1/x1
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 500ps -dutycycle 50 -starttime 0ps -endtime 500ps Edit:/xbar_v1/s
