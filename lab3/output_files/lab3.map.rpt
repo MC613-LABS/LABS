@@ -1,5 +1,5 @@
 Analysis & Elaboration report for lab3
-Wed Mar 15 16:25:34 2023
+Wed Mar 22 15:59:35 2023
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,8 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  5. Port Connectivity Checks: "mux4_to_1:Mux1|dec2_to_4:dec"
+  6. Analysis & Elaboration Messages
 
 
 
@@ -36,10 +37,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Mar 15 16:25:34 2023       ;
+; Analysis & Elaboration Status ; Successful - Wed Mar 22 15:59:35 2023       ;
 ; Quartus Prime Version         ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                 ; lab3                                        ;
-; Top-level Entity Name         ; extra_logic                                 ;
+; Top-level Entity Name         ; mux16_to_1                                  ;
 ; Family                        ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
 ; Total registers               ; N/A until Partition Merge                   ;
@@ -73,7 +74,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; extra_logic        ; lab3               ;
+; Top-level entity name                                                           ; mux16_to_1         ; lab3               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -154,51 +155,63 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux4_to_1:Mux1|dec2_to_4:dec" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                   ;
++------+-------+----------+--------------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Mar 15 16:25:24 2023
+    Info: Processing started: Wed Mar 22 15:59:26 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab3 -c lab3 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file xbar_v3.vhd
-    Info (12022): Found design unit 1: xbar_v3-rtl File: /home/ec2021-fra/ra198932/lab3/xbar_v3.vhd Line: 9
-    Info (12023): Found entity 1: xbar_v3 File: /home/ec2021-fra/ra198932/lab3/xbar_v3.vhd Line: 4
+    Info (12022): Found design unit 1: xbar_v3-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_v3.vhd Line: 9
+    Info (12023): Found entity 1: xbar_v3 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_v3.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file xbar_v2.vhd
-    Info (12022): Found design unit 1: xbar_v2-rtl File: /home/ec2021-fra/ra198932/lab3/xbar_v2.vhd Line: 9
-    Info (12023): Found entity 1: xbar_v2 File: /home/ec2021-fra/ra198932/lab3/xbar_v2.vhd Line: 4
+    Info (12022): Found design unit 1: xbar_v2-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_v2.vhd Line: 9
+    Info (12023): Found entity 1: xbar_v2 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_v2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file xbar_v1.vhd
-    Info (12022): Found design unit 1: xbar_v1-rtl File: /home/ec2021-fra/ra198932/lab3/xbar_v1.vhd Line: 9
-    Info (12023): Found entity 1: xbar_v1 File: /home/ec2021-fra/ra198932/lab3/xbar_v1.vhd Line: 4
+    Info (12022): Found design unit 1: xbar_v1-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_v1.vhd Line: 9
+    Info (12023): Found entity 1: xbar_v1 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_v1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file xbar_stage_8.vhd
-    Info (12022): Found design unit 1: xbar_stage_8-rtl File: /home/ec2021-fra/ra198932/lab3/xbar_stage_8.vhd Line: 9
-    Info (12023): Found entity 1: xbar_stage_8 File: /home/ec2021-fra/ra198932/lab3/xbar_stage_8.vhd Line: 4
+    Info (12022): Found design unit 1: xbar_stage_8-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_stage_8.vhd Line: 9
+    Info (12023): Found entity 1: xbar_stage_8 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_stage_8.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file xbar_stage_5.vhd
-    Info (12022): Found design unit 1: xbar_stage_5-rtl File: /home/ec2021-fra/ra198932/lab3/xbar_stage_5.vhd Line: 9
-    Info (12023): Found entity 1: xbar_stage_5 File: /home/ec2021-fra/ra198932/lab3/xbar_stage_5.vhd Line: 4
+    Info (12022): Found design unit 1: xbar_stage_5-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_stage_5.vhd Line: 9
+    Info (12023): Found entity 1: xbar_stage_5 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_stage_5.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file xbar_gen.vhd
-    Info (12022): Found design unit 1: xbar_gen-rtl File: /home/ec2021-fra/ra198932/lab3/xbar_gen.vhd Line: 9
-    Info (12023): Found entity 1: xbar_gen File: /home/ec2021-fra/ra198932/lab3/xbar_gen.vhd Line: 4
+    Info (12022): Found design unit 1: xbar_gen-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_gen.vhd Line: 9
+    Info (12023): Found entity 1: xbar_gen File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/xbar_gen.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file mux16_to_1.vhd
-    Info (12022): Found design unit 1: mux16_to_1-rtl File: /home/ec2021-fra/ra198932/lab3/mux16_to_1.vhd Line: 10
-    Info (12023): Found entity 1: mux16_to_1 File: /home/ec2021-fra/ra198932/lab3/mux16_to_1.vhd Line: 4
+    Info (12022): Found design unit 1: mux16_to_1-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd Line: 10
+    Info (12023): Found entity 1: mux16_to_1 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file mux4_to_1.vhd
-    Info (12022): Found design unit 1: mux4_to_1-rtl File: /home/ec2021-fra/ra198932/lab3/mux4_to_1.vhd Line: 10
-    Info (12023): Found entity 1: mux4_to_1 File: /home/ec2021-fra/ra198932/lab3/mux4_to_1.vhd Line: 4
+    Info (12022): Found design unit 1: mux4_to_1-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd Line: 10
+    Info (12023): Found entity 1: mux4_to_1 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file extra_logic.vhd
-    Info (12022): Found design unit 1: extra_logic-rtl File: /home/ec2021-fra/ra198932/lab3/extra_logic.vhd Line: 10
-    Info (12023): Found entity 1: extra_logic File: /home/ec2021-fra/ra198932/lab3/extra_logic.vhd Line: 4
+    Info (12022): Found design unit 1: extra_logic-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd Line: 10
+    Info (12023): Found entity 1: extra_logic File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file dec2_to_4.vhd
-    Info (12022): Found design unit 1: dec2_to_4-rtl File: /home/ec2021-fra/ra198932/lab3/dec2_to_4.vhd Line: 9
-    Info (12023): Found entity 1: dec2_to_4 File: /home/ec2021-fra/ra198932/lab3/dec2_to_4.vhd Line: 4
-Info (12127): Elaborating entity "extra_logic" for the top level hierarchy
+    Info (12022): Found design unit 1: dec2_to_4-rtl File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd Line: 9
+    Info (12023): Found entity 1: dec2_to_4 File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd Line: 4
+Info (12127): Elaborating entity "mux16_to_1" for the top level hierarchy
+Info (12128): Elaborating entity "mux4_to_1" for hierarchy "mux4_to_1:Mux1" File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd Line: 15
+Info (12128): Elaborating entity "dec2_to_4" for hierarchy "mux4_to_1:Mux1|dec2_to_4:dec" File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd Line: 16
+Info (12128): Elaborating entity "extra_logic" for hierarchy "mux4_to_1:Mux1|extra_logic:extra" File: /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd Line: 18
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 1520 megabytes
-    Info: Processing ended: Wed Mar 15 16:25:34 2023
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Processing ended: Wed Mar 22 15:59:35 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 

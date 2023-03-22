@@ -8,7 +8,20 @@ entity mux16_to_1 is
 end mux16_to_1;
 
 architecture rtl of mux16_to_1 is
+
+	SIGNAL m : STD_LOGIC_VECTOR(0 TO 3) ;
+
 begin
-  -- add your code
+Mux1: entity work.mux4_to_1 PORT MAP( data(15), data(14), data(13), data(12), sel(1 DOWNTO 0), m(0) ) ;
+
+Mux2: entity work.mux4_to_1 PORT MAP( data(11), data(10), data(9), data(8), sel(1 DOWNTO 0), m(1) ) ;
+
+Mux3: entity work.mux4_to_1 PORT MAP( data(7), data(6), data(5), data(4), sel(1 DOWNTO 0), m(2) ) ;
+
+Mux4: entity work.mux4_to_1 PORT MAP( data(3), data(2), data(1), data(0), sel(1 DOWNTO 0), m(3) );
+
+Mux5: entity work.mux4_to_1 PORT MAP( m(0), m(1), m(2), m(3), sel(3 DOWNTO 2), output ) ;
+  
+  
 end rtl;
 

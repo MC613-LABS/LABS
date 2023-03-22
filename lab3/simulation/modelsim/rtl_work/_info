@@ -7,32 +7,71 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/ec2021-fra/ra198932/lab3/simulation/modelsim
-Eextra_logic
-Z1 w1678908323
+Z0 d/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/simulation/modelsim
+Edec2_to_4
+Z1 w1679509321
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z4 8/home/ec2021-fra/ra198932/lab3/extra_logic.vhd
-Z5 F/home/ec2021-fra/ra198932/lab3/extra_logic.vhd
+Z4 8/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd
+Z5 F/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd
 l0
 L4
-VT4TLKl7TPLE::GJkjWfMF1
-!s100 :Tg0[:m0kj9^@W;EWoe2F0
+V2F7FOXc0BX3TI`J;N];SG1
+!s100 XQ:`A^YE1CA:0cK]JlmRl3
 Z6 OV;C;10.5b;63
 31
-Z7 !s110 1678908340
+Z7 !s110 1679511580
 !i10b 1
-Z8 !s108 1678908340.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|/home/ec2021-fra/ra198932/lab3/extra_logic.vhd|
-Z10 !s107 /home/ec2021-fra/ra198932/lab3/extra_logic.vhd|
+Z8 !s108 1679511580.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd|
+Z10 !s107 /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd|
 !i113 1
 Z11 o-93 -work work
 Z12 tExplicit 1 CvgOpt 0
 Artl
 R2
 R3
-DEx4 work 11 extra_logic 0 22 T4TLKl7TPLE::GJkjWfMF1
+Z13 DEx4 work 9 dec2_to_4 0 22 2F7FOXc0BX3TI`J;N];SG1
+l10
+L9
+VV`QZzKN@`k@GWBg]MHG3J2
+!s100 =9eTzn=`j;D7`[=I<0F9b1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eextra_logic
+Z14 w1678911513
+R2
+R3
+R0
+Z15 8/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd
+Z16 F/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd
+l0
+L4
+VT4TLKl7TPLE::GJkjWfMF1
+!s100 :Tg0[:m0kj9^@W;EWoe2F0
+R6
+31
+R7
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd|
+Z18 !s107 /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd|
+!i113 1
+R11
+R12
+Artl
+R2
+R3
+Z19 DEx4 work 11 extra_logic 0 22 T4TLKl7TPLE::GJkjWfMF1
 l11
 L10
 VUbjMLV[Khk>:cmC`n>?md1
@@ -42,8 +81,89 @@ R6
 R7
 !i10b 1
 R8
-R9
-R10
+R17
+R18
+!i113 1
+R11
+R12
+Emux16_to_1
+Z20 w1679511247
+R2
+R3
+R0
+Z21 8/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd
+Z22 F/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd
+l0
+L4
+V_Ed>BVMjn^@c`DBnBE4`H0
+!s100 XR]f2YW@0=A:122mUN[;f3
+R6
+31
+R7
+!i10b 1
+R8
+Z23 !s90 -reportprogress|300|-93|-work|work|/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd|
+Z24 !s107 /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd|
+!i113 1
+R11
+R12
+Artl
+Z25 DEx4 work 9 mux4_to_1 0 22 hOHT68I>gX@KA59BjI<Fz3
+R2
+R3
+DEx4 work 10 mux16_to_1 0 22 _Ed>BVMjn^@c`DBnBE4`H0
+l14
+L10
+VgedMj_l`IEJD_AgCX=JY31
+!s100 73z2=Vlzo4fLQh]ozF:zm3
+R6
+31
+R7
+!i10b 1
+R8
+R23
+R24
+!i113 1
+R11
+R12
+Emux4_to_1
+Z26 w1679507405
+R2
+R3
+R0
+Z27 8/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd
+Z28 F/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd
+l0
+L4
+VhOHT68I>gX@KA59BjI<Fz3
+!s100 4=Cz@YAjA=CmJ:;@Kia;E2
+R6
+31
+R7
+!i10b 1
+R8
+Z29 !s90 -reportprogress|300|-93|-work|work|/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd|
+Z30 !s107 /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd|
+!i113 1
+R11
+R12
+Artl
+R19
+R13
+R2
+R3
+R25
+l14
+L10
+VzA:kfj@OW4:Dl;EIcTI?O0
+!s100 ?eme9N4LZMkOU4=m7711?2
+R6
+31
+R7
+!i10b 1
+R8
+R29
+R30
 !i113 1
 R11
 R12

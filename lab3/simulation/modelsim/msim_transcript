@@ -9,42 +9,68 @@
 # Copying /opt/altera/17.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {/home/ec2021-fra/ra198932/lab3/extra_logic.vhd}
+# vcom -93 -work work {/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:25:40 on Mar 15,2023
-# vcom -reportprogress 300 -93 -work work /home/ec2021-fra/ra198932/lab3/extra_logic.vhd 
+# Start time: 15:59:40 on Mar 22,2023
+# vcom -reportprogress 300 -93 -work work /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/extra_logic.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity extra_logic
 # -- Compiling architecture rtl of extra_logic
-# End time: 16:25:40 on Mar 15,2023, Elapsed time: 0:00:00
+# End time: 15:59:40 on Mar 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:59:40 on Mar 22,2023
+# vcom -reportprogress 300 -93 -work work /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/dec2_to_4.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dec2_to_4
+# -- Compiling architecture rtl of dec2_to_4
+# End time: 15:59:40 on Mar 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:59:40 on Mar 22,2023
+# vcom -reportprogress 300 -93 -work work /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux4_to_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux4_to_1
+# -- Compiling architecture rtl of mux4_to_1
+# -- Loading entity dec2_to_4
+# -- Loading entity extra_logic
+# End time: 15:59:40 on Mar 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:59:40 on Mar 22,2023
+# vcom -reportprogress 300 -93 -work work /home/ec2021-fra/ra246973/mc613/LABS-main/lab3/mux16_to_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux16_to_1
+# -- Compiling architecture rtl of mux16_to_1
+# -- Loading entity mux4_to_1
+# End time: 15:59:40 on Mar 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-vsim work.extra_logic
-# vsim work.extra_logic 
-# Start time: 16:25:51 on Mar 15,2023
+vsim work.mux16_to_1
+# vsim work.mux16_to_1 
+# Start time: 15:59:46 on Mar 22,2023
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
+# Loading work.mux16_to_1(rtl)
+# Loading work.mux4_to_1(rtl)
+# Loading work.dec2_to_4(rtl)
 # Loading work.extra_logic(rtl)
-add wave -position insertpoint  \
-sim:/extra_logic/w0
-wave create -driver freeze -pattern clock -initialvalue U -period 5ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/w0
+wave create -driver freeze -pattern counter -startvalue 0000000000000000 -endvalue 1111111111111111 -type Range -direction Up -period 10ps -step 1 -repeat forever -range 15 0 -starttime 0ps -endtime 1000ps sim:/mux16_to_1/data
 # Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
-wave create -driver freeze -pattern clock -initialvalue U -period 10ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/w0
-wave create -driver freeze -pattern clock -initialvalue U -period 20ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/y0
-wave create -driver freeze -pattern clock -initialvalue U -period 20ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/w0
-add wave -position insertpoint  \
-sim:/extra_logic/y0
-wave create -driver freeze -pattern clock -initialvalue U -period 30ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/y0
-wave create -driver freeze -pattern clock -initialvalue U -period 45ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/w1
-wave create -driver freeze -pattern clock -initialvalue U -period 67ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/y1
-wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/w2
-wave create -driver freeze -pattern clock -initialvalue U -period 150ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/y2
-wave create -driver freeze -pattern clock -initialvalue U -period 225ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/w3
-wave create -driver freeze -pattern clock -initialvalue U -period 340ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/extra_logic/y3
-add wave -position end  sim:/extra_logic/f
+wave create -driver freeze -pattern counter -startvalue 0000 -endvalue 1111 -type Range -direction Up -period 200ps -step 1 -repeat forever -range 3 0 -starttime 0ps -endtime 1000ps sim:/mux16_to_1/sel
+add wave -position end  sim:/mux16_to_1/output
 run
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/libpthread.so.0 : module was loaded at an absolute address.
@@ -54,5 +80,15 @@ run
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/libc.so.6 : module was loaded at an absolute address.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/libnss_systemd.so.2 : module was loaded at an absolute address.
-# End time: 16:35:49 on Mar 15,2023, Elapsed time: 0:09:58
-# Errors: 0, Warnings: 8
+restart
+wave modify -driver freeze -pattern counter -startvalue 0000 -endvalue 1111 -type Range -direction Up -period 100ps -step 1 -repeat forever -range 3 0 -starttime 0ps -endtime 1000ps Edit:/mux16_to_1/sel
+wave modify -driver freeze -pattern counter -startvalue 0000 -endvalue 1111 -type Range -direction Up -period 50ps -step 1 -repeat forever -range 3 0 -starttime 0ps -endtime 1000ps Edit:/mux16_to_1/sel
+run
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/libnss_systemd.so.2 : module was loaded at an absolute address.
