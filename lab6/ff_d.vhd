@@ -13,6 +13,39 @@ entity ff_d is
 end ff_d;
 
 architecture rtl of ff_d is
+
+signal Q_temp : std_logic;
+	
 begin
-  -- Your code here!
+
+  PROCESS ( Clk )
+
+	BEGIN
+				
+		IF Clk'EVENT AND Clk = '0' THEN
+
+			IF Preset = '1' AND Clear = '0' THEN
+				
+				Q_temp <= '1';
+				
+			ELSIF Preset = '1' AND Clear = '1' THEN
+			
+				Q_temp <= '0';
+				
+			ELSIF Clear = '1' THEN
+				
+				Q_temp <= '0';
+				
+			ELSE 
+				
+				Q_temp <= D;
+			
+			END IF;
+
+		END IF ;
+		
+		Q <= Q_temp;
+		Q_n <= not Q_temp;
+
+	END PROCESS ;
 end rtl;
