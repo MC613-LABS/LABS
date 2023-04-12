@@ -14,6 +14,36 @@ entity ff_jk is
 end ff_jk;
 
 architecture rtl of ff_jk is
+	
 begin
-  -- Your code here!
+
+  PROCESS ( Clk )
+		variable Q_temp : std_logic;
+	BEGIN
+						
+		IF Clk'EVENT AND Clk = '1' THEN
+
+			IF Preset = '1' AND Clear = '0' THEN
+				
+				Q_temp := '1';
+				
+			ELSIF Preset = '1' AND Clear = '1' THEN
+			
+				Q_temp := '0';
+				
+			ELSIF Clear = '1' THEN
+				
+				Q_temp := '0';
+				
+			ELSE 
+				
+				Q_temp := (J AND NOT(Q_temp)) OR (NOT(K) AND Q_temp);
+			
+			END IF;
+
+		END IF ;
+		Q <= Q_temp;
+		Q_n <= not Q_temp;
+
+	END PROCESS ;
 end rtl;
