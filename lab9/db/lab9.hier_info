@@ -1,0 +1,7 @@
+|clk_div
+clk => Saida.CLK
+clk => Count[0].CLK
+clk => Count[1].CLK
+clk_hz <= Saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
