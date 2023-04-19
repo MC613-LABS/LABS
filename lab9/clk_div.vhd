@@ -11,7 +11,7 @@ end clk_div;
 architecture behavioral of clk_div is
 
 	SIGNAL Count : integer range 0 to 50000000;
-	SIGNAL Saida: std_logic := '0';
+	SIGNAL Saida: std_logic;
 
 	BEGIN
 
@@ -23,9 +23,13 @@ architecture behavioral of clk_div is
 
 				Count <= Count + 1;
 				
+				IF (Count = 0) THEN
+					Saida <= '0';
+				END IF;
+				
 				IF (Count = 49999999) THEN
 					Count <= 0;
-					Saida <= not Saida;
+					Saida <= '1';
 				END IF;
 
 			END IF ;
