@@ -22,11 +22,64 @@ architecture rtl of clock is
       clk_hz : out std_logic
     );
   end component;
+  
   signal clk_hz : std_logic;
   
-  -- Your code here!
-begin
+  variable sec_dec_temp : std_logic;
+  variable sec_un_temp: std_logic;
+  
+  variable min_dec_temp : std_logic;
+  variable min_un_temp : std_logic;
+  
+  variable hour_dec_temp : std_logic;
+  variable hour_un_temp: std_logic;
+  
+  variable valid_input : std_logic;
+  
+begin	
   clock_divider : clk_div port map (clk, clk_hz);
 
-  -- Your code here!
+		PROCESS(clk_hz)
+		
+			valid_input = '0';
+		
+			BEGIN
+				
+				IF(clk_hz'EVENT AND clk_hz = '1') THEN
+				
+				
+				
+					IF(set_hour or set_minute or set_second) THEN					
+							
+																				
+						ELSE THEN
+						
+						END IF;
+					
+					
+					
+					
+					ELSE THEN
+					
+						
+					
+					
+					
+					END IF;
+				
+				
+				END IF;
+				
+				
+			END PROCESS; 
+			
+		sec_dec <= sec_dec_temp;
+		sec_un <= sec_un_temp;
+		
+		min_dec <= min_dec_temp;
+		min_un <= min_un_temp;
+		
+		hour_dec <= hour_dec_temp;
+		hour_un <= hour_un_temp;
+		
 end rtl;
