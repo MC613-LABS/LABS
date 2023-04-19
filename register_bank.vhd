@@ -49,14 +49,14 @@ begin
 	dec1 : dec3_to_8 port map(reg_wr, d2r);
 	dec2 : dec3_to_8 port map(reg_rd, r2d);
 	
-	reg0 : reg port map(clk, data_in, rg0, d2r(0), clear);
-	reg1 : reg port map(clk, data_in, rg1, d2r(1), clear);
-	reg2 : reg port map(clk, data_in, rg2, d2r(2), clear);
-	reg3 : reg port map(clk, data_in, rg3, d2r(3), clear);
-	reg4 : reg port map(clk, data_in, rg4, d2r(4), clear);
-	reg5 : reg port map(clk, data_in, rg5, d2r(5), clear);
-	reg6 : reg port map(clk, data_in, rg6, d2r(6), clear);
-	reg7 : reg port map(clk, data_in, rg7, d2r(7), clear);
+	reg0 : reg port map(clk, data_in, rg0, d2r(0) and we, clear);
+	reg1 : reg port map(clk, data_in, rg1, d2r(1) and we, clear);
+	reg2 : reg port map(clk, data_in, rg2, d2r(2) and we, clear);
+	reg3 : reg port map(clk, data_in, rg3, d2r(3) and we, clear);
+	reg4 : reg port map(clk, data_in, rg4, d2r(4) and we, clear);
+	reg5 : reg port map(clk, data_in, rg5, d2r(5) and we, clear);
+	reg6 : reg port map(clk, data_in, rg6, d2r(6) and we, clear);
+	reg7 : reg port map(clk, data_in, rg7, d2r(7) and we, clear);
 	
 	bf0: zbuffer port map(rg0, r2d(0), data_out);
 	bf1: zbuffer port map(rg1, r2d(1), data_out);
