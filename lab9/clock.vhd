@@ -23,63 +23,178 @@ architecture rtl of clock is
     );
   end component;
   
-  signal clk_hz : std_logic;
-  
-  variable sec_dec_temp : std_logic;
-  variable sec_un_temp: std_logic;
-  
-  variable min_dec_temp : std_logic;
-  variable min_un_temp : std_logic;
-  
-  variable hour_dec_temp : std_logic;
-  variable hour_un_temp: std_logic;
-  
-  variable valid_input : std_logic;
+	signal clk_hz : std_logic;
+	signal sec_un_int    : integer range 0 to 9;
+	signal sec_dec_int  	: integer range 0 to 9;
+	signal min_un_int    : integer range 0 to 9;
+	signal min_dec_int  	: integer range 0 to 9;
+	signal hour_un_int   : integer range 0 to 9;
+	signal hour_dec_int 	: integer range 0 to 9;
+	
+	
+	signal unity_aux 		: unsigned(3 downto 0);
+	signal decimal_aux 		: unsigned(3 downto 0);
+
+	
+	signal sec_un_aux 		: unsigned(3 downto 0);
+	signal sec_dec_aux		: unsigned(3 downto 0);
+	signal min_un_aux 		: unsigned(3 downto 0);
+	signal min_dec_aux 		: unsigned(3 downto 0);
+	signal hour_un_aux 		: unsigned(3 downto 0);
+	signal hour_dec_aux 		: unsigned(3 downto 0);
+
+	
+	signal sec_un_bin    : std_logic_vector(3 downto 0);
+	signal sec_dec_bin  	: std_logic_vector(3 downto 0);
+	signal min_un_bin    : std_logic_vector(3 downto 0);
+	signal min_dec_bin  	: std_logic_vector(3 downto 0);
+	signal hour_un_bin   : std_logic_vector(3 downto 0);
+	signal hour_dec_bin 	: std_logic_vector(3 downto 0);
   
 begin	
   clock_divider : clk_div port map (clk, clk_hz);
 
-		PROCESS(clk_hz)
-		
-			valid_input = '0';
-		
+		PROCESS(clk)
+			
 			BEGIN
 				
-				IF(clk_hz'EVENT AND clk_hz = '1') THEN
-				
-				
-				
-					IF(set_hour or set_minute or set_second) THEN					
-							
-																				
-						ELSE THEN
+				IF(clk'EVENT AND clk = '1') THEN
+					
+					IF(set_second = '1') THEN
+
+						unity_aux <= unsigned(unity);
+
+						decimal_aux <= unsigned(decimal);
+
 						
-						END IF;
+                        IF (unity_aux < 10) AND (decimal_aux < 6) then	
+
+                            sec_un_int <= to_integer(unity_aux);	
+
+                            sec_dec_int <= to_integer(decimal_aux);
+
+                        END IF;
 					
-					
-					
-					
-					ELSE THEN
-					
+					ELSIF(set_minute = '1') THEN
+
+                        unity_aux <= unsigned(unity);
+
+						decimal_aux <= unsigned(decimal);
+
 						
+                        IF (unity_aux < 10) AND (decimal_aux < 6) then	
+
+                            min_un_int <= to_integer(unity_aux);	
+
+                            min_dec_int <= to_integer(decimal_aux);
+
+                        END IF;
 					
+					ELSIF(set_hour = '1') THEN
+
+                        unity_aux <= unsigned(unity);
+
+						decimal_aux <= unsigned(decimal);
+
+						
+                        IF (unity_aux < 10) AND (decimal_aux < 3) then	
+
+                            hour_un_int <= to_integer(unity_aux);	
+
+                            hour_dec_int <= to_integer(decimal_aux);
+
+                        END if;
+
 					
-					
-					END IF;
+					ELSIF(clk_hz = '1') THEN
+
+                        IF(sec_un_int = 9) THEN
+
+                            sec_un_int <= 0;
+
+                            IF(sec_dec_int = 5) THEN
+
+                                sec_dec_int <= 0;
+
+                                IF(min_un_int = 9) THEN
+
+                                    min_un_int <= 0;
+
+                                    IF(min_dec_int = 5) THEN
+
+                                        min_dec_int <= 0;
+
+                                        IF(hour_un_int = 9) THEN
+
+                                            hour_un_int <= 0;
+
+                                            hour_dec_int <= hour_dec_int + 1;
+
+                                        ELSIF(hour_un_int = 3 AND hour_dec_int = 2) THEN
+
+                                            hour_un_int <= 0;
+                                            hour_dec_int <= 0;
+
+                                        END if;
+
+                                    ELSE
+                                        
+                                        min_dec_int <= min_dec_int + 1;
+
+                                    
+                                    END if;
+
+
+                                ELSE
+
+                                    min_un_int <= min_un_int + 1;
+
+                                
+                                END if;
+
+                            ELSE
+
+                                sec_dec_int <= sec_dec_int + 1;
+
+                            END if;
+
+
+                        ELSE
+
+                            sec_un_int <= sec_un_int + 1;
+
+                        END if;
+
+                    END if;
+
+                END if;
+
+            END process;
 				
-				
-				END IF;
-				
-				
-			END PROCESS; 
-			
-		sec_dec <= sec_dec_temp;
-		sec_un <= sec_un_temp;
-		
-		min_dec <= min_dec_temp;
-		min_un <= min_un_temp;
-		
-		hour_dec <= hour_dec_temp;
-		hour_un <= hour_un_temp;
+        sec_un_aux <= to_unsigned(sec_un_int, 4);
+        sec_un_bin <= std_logic_vector(sec_un_aux);
+        
+        sec_dec_aux <= to_unsigned(sec_dec_int, 4);
+        sec_dec_bin <= std_logic_vector(sec_dec_aux);
+        
+        min_un_aux <= to_unsigned(min_un_int, 4);
+        min_un_bin <= std_logic_vector(min_un_aux);
+        
+        min_dec_aux <= to_unsigned(min_dec_int, 4);
+        min_dec_bin <= std_logic_vector(min_dec_aux);
+        
+        hour_un_aux <= to_unsigned(hour_un_int, 4);
+        hour_un_bin <= std_logic_vector(hour_un_aux);
+        
+        hour_dec_aux <= to_unsigned(hour_dec_int, 4);
+	    hour_dec_bin <= std_logic_vector(hour_dec_aux);
+
+
+        bin1: bin2dec port map (sec_un_bin, sec_un);
+        bin2: bin2dec port map (sec_dec_bin, sec_dec);
+        bin3: bin2dec port map (min_un_bin, min_un);
+        bin4: bin2dec port map (min_dec_bin, min_dec);
+        bin5: bin2dec port map (hour_un_bin, hour_un);
+        bin6: bin2dec port map (hour_dec_bin, hour_dec);
 		
 end rtl;

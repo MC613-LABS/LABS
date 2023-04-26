@@ -1,5 +1,5 @@
 Analysis & Elaboration report for lab9
-Wed Apr 19 15:12:45 2023
+Wed Apr 19 15:40:17 2023
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Apr 19 15:12:45 2023       ;
+; Analysis & Elaboration Status ; Successful - Wed Apr 19 15:40:17 2023       ;
 ; Quartus Prime Version         ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                 ; lab9                                        ;
 ; Top-level Entity Name         ; clk_div                                     ;
@@ -160,7 +160,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Apr 19 15:12:40 2023
+    Info: Processing started: Wed Apr 19 15:40:12 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab9 -c lab9 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -176,7 +176,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file clk_div
 Info (12127): Elaborating entity "clk_div" for the top level hierarchy
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 1519 megabytes
-    Info: Processing ended: Wed Apr 19 15:12:45 2023
+    Info: Processing ended: Wed Apr 19 15:40:17 2023
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:13
 

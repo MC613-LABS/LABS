@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/ec2021-fra/ra198932/MC613/lab9/simulation/modelsim
 Eclk_div
-Z1 w1681927948
+Z1 w1681929526
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
@@ -21,9 +21,9 @@ VR0Q0hjZ0hG@KMnB0>IVXD3
 !s100 >FLemAZInn1X9cfl0V8^G3
 Z6 OV;C;10.5b;63
 31
-Z7 !s110 1681927976
+Z7 !s110 1681929622
 !i10b 1
-Z8 !s108 1681927976.000000
+Z8 !s108 1681929622.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|/home/ec2021-fra/ra198932/MC613/lab9/clk_div.vhd|
 Z10 !s107 /home/ec2021-fra/ra198932/MC613/lab9/clk_div.vhd|
 !i113 1
@@ -35,8 +35,8 @@ R3
 DEx4 work 7 clk_div 0 22 R0Q0hjZ0hG@KMnB0>IVXD3
 l16
 L11
-VjLfXASdf=Zh@4FORFfa6B3
-!s100 a1>:<ieN9afTmOE;Ye:dA0
+V5_28mLKhOm4`Fe>CBNM0c1
+!s100 >=FbiCk>KEBWnMCbW?9gg1
 R6
 31
 R7
